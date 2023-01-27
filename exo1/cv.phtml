@@ -1,55 +1,3 @@
-<?php
-
-if(isset($_GET["nom"]))
-    $lastName = $_GET["nom"];
-
-if(isset($_GET["prenom"]))
-    $firstName = $_GET["prenom"];
-    
-if(isset($_GET["email"]))
-    $email = $_GET["email"];
-    
-if(isset($_GET["telephone"]))
-    $telephone = $_GET["telephone"];
-    
-if(isset($_GET["linkedin"]))
-    $linkedin = $_GET["linkedin"];
-    
-if(isset($_GET["github"]))
-    $github = $_GET["github"];
-    
-if(isset($_GET["biographie"]))
-    $bio = $_GET["biographie"];
-    
-if(isset($_GET["loisir-1"]))
-    $loisir1 = $_GET["loisir-1"];
-    
-if(isset($_GET["loisir-2"]))
-    $loisir2 = $_GET["loisir-2"];
-    
-if(isset($_GET["loisir-3"]))
-    $loisir3 = $_GET["loisir-3"];
-    
-if(isset($_GET["loisir-4"]))
-    $loisir4 = $_GET["loisir-4"];
-    
-if(isset($_GET["language"]))
-    $language = $_GET["language"];
-    
-if(isset($_GET["lang"]))
-    $lang = $_GET["lang"];
-    
-if(isset($_GET["frameworks"]))
-    $framework = $_GET["frameworks"];
-    
-if(isset($_GET["software"]))
-    $software = $_GET["software"];
-    
-if(isset($_GET["color"]))
-    $color = $_GET["color"];
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,9 +10,9 @@ if(isset($_GET["color"]))
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body id="cv" class="<?= $color; ?>">
+    <body id="cv" class="<?= $form['color']; ?>">
         <header>
-            <h1><span><?= $lastName; ?></span> <?= $firstName; ?></h1>
+            <h1><span><?= $form['nom']; ?></span> <?= $form['prenom']; ?></h1>
             <h2>Intitulé du poste</h2>
         </header>
         <main>
@@ -79,48 +27,48 @@ if(isset($_GET["color"]))
                             Email
                         </dt>
                         <dd>
-                            <?= $email; ?>
+                            <?= $form['email']; ?>
                         </dd>
                         <dt>
                             Téléphone
                         </dt>
                         <dd>
-                            <?= $telephone; ?>
+                            <?= $form['telephone']; ?>
                         </dd>
                         <dt>
                             LinkedIn
                         </dt>
                         <dd>
-                            <a href="<?= $linkedin ?>"><?= $linkedin ?></a>
+                            <a href="<?= $form['linkedin']; ?>"><?= $form['linkedin']; ?></a>
                         </dd>
                         <dt>
                             GitHub
                         </dt>
                         <dd>
-                            <a href="<?= $github ?>"><?= $github ?></a>
+                            <a href="<?= $form['github']; ?>"><?= $form['github']; ?></a>
                         </dd>
                     </dl>
                 </section>
                 <section>
                     <h4>Biographie</h4>
                     <p>
-                        <?= $bio; ?>
+                        <?= $form['biographie']; ?>
                     </p>
                 </section>
                 <section>
                     <h4>Loisirs</h4>
                     <ul>
                         <li>
-                            <?= $loisir1; ?>
+                            <?= $form['loisir-1']; ?>
                         </li>
                         <li>
-                            <?= $loisir2; ?>
+                            <?= $form['loisir-2']; ?>
                         </li>
                         <li>
-                            <?= $loisir3; ?>
+                            <?= $form['loisir-3']; ?>
                         </li>
                         <li>
-                            <?= $loisir4; ?>
+                            <?= $form['loisir-4']; ?>
                         </li>
                     </ul>
                 </section>
@@ -132,7 +80,7 @@ if(isset($_GET["color"]))
                     <ul>
                         <?php
                         
-                            foreach($lang as $item)
+                            foreach($form['lang'] as $item)
                             {
                         ?>
                         
@@ -148,7 +96,7 @@ if(isset($_GET["color"]))
                     <ul>
                         <?php
                         
-                            foreach($framework as $item)
+                            foreach($form['frameworks'] as $item)
                             {
                         ?>
                         
@@ -164,7 +112,7 @@ if(isset($_GET["color"]))
                     <ul>
                         <?php
                         
-                            foreach($software as $item)
+                            foreach($form['software'] as $item)
                             {
                         ?>
                         
@@ -180,7 +128,7 @@ if(isset($_GET["color"]))
                     <ul>
                         <?php
                         
-                            foreach($language as $item)
+                            foreach($form['language'] as $item)
                             {
                         ?>
                         
